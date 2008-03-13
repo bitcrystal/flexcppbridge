@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+<fab:FABridge id="fabridge" xmlns:fab="bridge.*" bridgeName="bridge1"/>
+
+<mx:Panel id="mainPanel" layout="horizontal" title="Run" width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" backgroundColor="#555555" barColor="#BA2929" borderColor="#190302" color="#3B2727" dropShadowEnabled="true" fontAntiAliasType="advanced" fontSize="12" fontFamily="Arial">
+	<mx:TextInput id="runText" width="294"/>
+	<mx:Button label="Run" id="runButton" />
+</mx:Panel>
+	
+	
+</mx:Application>

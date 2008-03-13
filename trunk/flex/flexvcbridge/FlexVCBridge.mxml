@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="horizontal">
+<mx:Script source="flexvc.as"/>
+
+<fab:FABridge id="fabridge" xmlns:fab="bridge.*" bridgeName="bridge1"/>
+
+<mx:SeriesInterpolate id="interpolate" duration="500"/>
+ 
+
+	  <mx:Panel id="panel1" title="Exploding Pie Chart (animated)">
+	   <mx:HBox>
+	     <mx:PieChart id="pie1" dataProvider="{expenses}" showDataTips="true" selectionMode="single"
+	     	 itemClick="explodeSlice(event)"  width="300">
+	        <mx:series>
+	           <mx:PieSeries field="Amount" nameField="Expense" perWedgeExplodeRadius="{explodingArray}" 
+	           	 showDataEffect="interpolate"/>	           	 
+	        </mx:series>
+	     </mx:PieChart>
+	     <mx:Legend dataProvider="{pie1}"/>
+	      </mx:HBox> 
+	  </mx:Panel>
+
+</mx:Application>

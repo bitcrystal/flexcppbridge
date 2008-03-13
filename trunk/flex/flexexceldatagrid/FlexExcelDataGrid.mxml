@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" creationComplete="init()">
+
+  <fab:FABridge id="fabridge" xmlns:fab="bridge.*" bridgeName="excelBridge"/>
+  <mx:Panel title="Excel Formulae Supporting Advanced DataGrid"  width="336" height="332" horizontalAlign="center" verticalAlign="middle">
+ <mx:Script>
+ 	<![CDATA[
+ 	private function init():void
+ 	{
+ 		trace(adgMain.dataProvider.length);
+ 	}
+ 	]]>
+ </mx:Script>
+    <mx:AdvancedDataGrid editable="true" x="10" y="10" id="adgMain" designViewDataType="flat" selectionMode="singleCell" height="205">
+      <mx:columns>
+	<mx:AdvancedDataGridColumn headerText="Column 1" dataField="col1"/>
+	<mx:AdvancedDataGridColumn headerText="Column 2" dataField="col2"/>
+	<mx:AdvancedDataGridColumn headerText="Column 3" dataField="col3"/>
+      </mx:columns>
+      <mx:dataProvider>
+	<mx:Object col1="1" col2="2" col3="3" />
+	<mx:Object col1="10" col2="20" col3="30" />
+	<mx:Object col1="=SUM(A1:A2)" col2="21" col3="31" />
+	<mx:Object col1="12" col2="22" col3="32" />
+	<mx:Object col1="13" col2="23" col3="33" />
+	<mx:Object col1="14" col2="24" col3="34" />
+	<mx:Object col1="15" col2="=AVERAGE(B1:B5)" col3="35" />
+      </mx:dataProvider>
+    </mx:AdvancedDataGrid>
+    
+    <mx:Button id="runButton" label="Compute Formulae in Grid">
+      
+    </mx:Button>
+  </mx:Panel>
+  
+</mx:Application>

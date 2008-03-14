@@ -1,14 +1,10 @@
-#summary Coming Soon.
+#summary Building the source.
 #labels Phase-Implementation
 
-= Introduction =
+You need visual studio.
 
-Add your content here.
+Compile the code in src into a static lib. Link to that from the apps in examples. All apps in examples are MFC projects.
 
+To compile the flex part, for each project you have to have the bridge folder with FABridge.as inside it.
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+More details coming soon.

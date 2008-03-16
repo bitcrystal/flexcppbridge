@@ -5,6 +5,8 @@ You need visual studio.
 
 Compile the code in src into a static lib. Link to that from the apps in examples. All apps in examples are MFC projects.
 
+In each example, there will be a class inheriting from ASWork (like ASWorkSample, ASWorkFlexRun, etc.). This is the place to start coding in.
+
 To compile the flex part, for each project you have to have the bridge folder with FABridge.as inside it.
 
 More details coming soon.

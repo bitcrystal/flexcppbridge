@@ -1,0 +1,6 @@
+#summary Future roadmap for Flex C++ bridge
+#labels Phase-Requirements
+
+= Flex C++ Bridge - The Future =
+
+Support communication via sockets. This should make it platform agnostic. Instead of putting XML requests from On Flash Call to Flex Call Queue.

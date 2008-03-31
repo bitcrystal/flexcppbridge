@@ -3,4 +3,6 @@
 
 = Flex C++ Bridge - The Future =
 
-Support communication via sockets. This should make it platform agnostic. Instead of putting XML requests from On Flash Call to Flex Call Queue.
+Fake a NPAPI host (firefox's plugin architecture) to load firefox plugin version of flash player. --- This is done, just need to figure out the externalinterface bit in firefox.
+
+~~Support communication via sockets. This should make it platform agnostic. Instead of putting XML requests from On Flash Call to Flex Call Queue.~~

@@ -251,6 +251,11 @@ bool ParseArgs(const TiXmlNode* argnode, std::vector<CASObject>& vArgOut)
                     iss >> d;
                     oObj.SetInt(d);
                 }
+                /* Bug reported by Supun - Boolean return values come
+                 * back as ASOBJECT_NONE. These if statements will
+                 * never get executed because FirstChild() will be
+                 * null since the node name itself is the value we
+                 * want here */
                 else if ( std::string(argelem->Value()) == "false" )
                 {
                     oObj.SetBoolean(false);
@@ -261,7 +266,26 @@ bool ParseArgs(const TiXmlNode* argnode, std::vector<CASObject>& vArgOut)
                 }
                 vArgOut.push_back(oObj);
                 //LOG(argelem->FirstChild()->Value());
-            }                    
+            }
+            /* fix for the boolean value parsing bug */
+            else if ( argelem->FirstChild() == NULL && argelem->Value() != NULL )
+            {
+                CASObject bObj;
+                if ( std::string(argelem->Value()) == "false" )
+                {
+                    bObj.SetBoolean(false);
+                }
+                else if ( std::string(argelem->Value()) == "true" )
+                {
+                    bObj.SetBoolean(true);
+                }
+                if ( bObj.GetType() == ASOBJECT_BOOLEAN )
+                {
+                    vArgOut.push_back(bObj);
+                }
+            }
+
+
         }
         return true;        
     }
